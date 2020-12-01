@@ -1,0 +1,28 @@
+@import 'header';
+@import 'sign';
+@import 'btn';
+
+body {
+  width: 414px;
+  height: 921px;
+  background: #FFFFFF;
+
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: normal;
+
+  .container {
+    margin: 0 30px;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    opacity: 0.5;
+  }
+
+  .fadeOut {
+    display: none;
+  }
+}
+
