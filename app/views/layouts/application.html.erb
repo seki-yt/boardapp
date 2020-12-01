@@ -12,10 +12,22 @@
 
   <body>
     <header class="header">
-      <h1 class="header-title">Boards</h1>
+      <div class="container">
+        <div class = header-title>
+          <h1 class="header-right">Boards</h1>
+          <% if user_signed_in? %>
+            <%= image_tag 'Oval.png', :class => 'header-avatar-left dropbtn'%>
+            <div class="dropdown-content">
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          <% else %>
+              <%= link_to 'ログイン', new_user_session_path, :class => 'loginpage'%>
+            </div>
+          <% end %>
+      </div>
+      <div class="line"></div>
     </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="notice fadeOut"><%= notice %></p>
+    <p class="alert fadeOut"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
