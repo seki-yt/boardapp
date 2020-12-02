@@ -1,0 +1,85 @@
+.card {
+  margin-top: 26px;
+  width: 362px;
+  height: 180px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+
+  &-title {
+    display: flex;
+
+    &-left{
+      margin: 32px 0 6px 17px;
+      font-size: 18px;
+    }
+
+    &-right {
+      margin: 39px 21px 18px auto;
+      cursor: pointer;
+
+      &:hover + .drop-text{
+        opacity: 1;
+      }
+    }
+  }
+
+  &-content {
+    margin-left: 17px;
+    font-size: 14px;
+    line-height: 19px;
+    opacity: 0.4;
+  }
+
+  &-avatar {
+    width: 30px;
+    height: 30px;
+    margin: 25px 0 20px 20px;
+  }
+  
+
+  .drop-text {
+    opacity: 0;
+    position: absolute;
+    top: 190px;
+    left: 315px;
+    width: 66px;
+    height: 66px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    z-index: 1;
+    transition-duration: 7ms;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .edit-text{
+    display: block;
+    font-size: 12px;
+    margin: 10px 0 11px 14px;
+  }
+
+  .delete-text{
+    display: block;
+    font-size: 12px;
+    margin: 10px 0 11px 14px;
+  }
+
+  
+}
+
+
+.new-card {
+  margin-top: 26px;
+  width: 362px;
+  height: 180px;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  line-height: 180px;
+  text-align: center;
+
+  .new-board {
+    font-size: 18px;
+  }  
+}
