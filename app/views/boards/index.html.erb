@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>All Board</h1>
+  <% @boards.each do |board| %>
+    <div class="card">
+      <div class="card-title">
+      <%= link_to board_path(id: board.id) do %>
+        <p class = 'card-title-left'><%= board.title %></p>
+      <% end %>
+        <%= image_tag 'Combined Shape.png', :class => 'card-title-right dropbtn'%>
+        <div class="drop-text">
+          <a href = "#" class="edit-text">Edit</a>
+          <a href = "#" class="delete-text">Delete</a>
+        </div>
+      </div>
+      <p class = "card-content"><%= board.content %></p>
+      <%= image_tag 'Oval (1).png', :class => 'card-avatar' %>
+    </div>
+  <% end %>
+  <div class="new-card">
+    <a href="#" class="new-board">+ Add new board</a>
+  </div>
+</div>
