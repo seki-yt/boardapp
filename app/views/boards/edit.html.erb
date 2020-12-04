@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="card-title">
+    <h2>New board</h2>
+  </div>
+    <ul>
+  <% @board.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+  <% end %>
+    </ul>
+  <%= form_with(model: @board, url: board_path(@board), method: 'put', local: true) do |f| %>
+    <div  class = 'text-around' >
+      <%= f.label :title, 'Name', class: 'text-title'%>
+    </div>
+    <div>
+      <%= f.text_field :title , class: 'text'%>
+    </div>
+    <div class = 'text-around' >
+      <%= f.label :content, 'Description', class: 'text-title'%>
+    </div>
+    <div>
+      <%= f.text_area :content, class: 'text-content'%>
+    </div>
+
+    <%= f.submit 'Submit', class: 'btn-primary' %>
+
+  <% end %>
+</div>

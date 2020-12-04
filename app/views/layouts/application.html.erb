@@ -14,7 +14,7 @@
     <header class="header">
       <div class="container">
         <div class = header-title>
-          <h1 class="header-right">Boards</h1>
+          <%= link_to 'Board', root_path, class: "header-right" %>
           <% if user_signed_in? %>
             <%= image_tag 'Oval.png', :class => 'header-avatar-left dropbtn'%>
             <div class="dropdown-content">
