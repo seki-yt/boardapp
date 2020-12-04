@@ -2,11 +2,13 @@
   <div class="card-title">
     <p class = 'card-title-left'><%= @board.title %></p>
     <%= image_tag 'Combined Shape.png', :class => 'card-title-right dropbtn'%>
-    <div class="drop-text">
-      <a href = "#" class="edit-text">Edit</a>
-      <a href = "#" class="delete-text">Delete</a>
-    </div>
   </div>
-  <p class = "card-content"><%= @board.content %></p>
-  <%= image_tag 'Oval (1).png', :class => 'card-avatar' %>
+    <div class="content">
+      <p class = "card-content"><%= @board.content %></p>
+      <div class="content-drop drop-btn">
+        <%= link_to 'Edit', edit_board_path(id: @board.id), class: 'edit-text' %>          
+        <a href = "#" class="delete-text">Delete</a>
+      </div>
+    </div>
+    <%= image_tag 'Oval (1).png', :class => 'card-avatar' %>
 </div>
