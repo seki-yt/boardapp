@@ -16,7 +16,9 @@
       <%= image_tag 'Oval (1).png', :class => 'card-avatar' %>
     </div>
   <% end %>
-  <div class="new-card">
-    <a href="#" class="new-board">+ Add new board</a>
-  </div>
+  <%= link_to new_board_path do %>
+    <div class="new-card">
+      <p class="new-board">+ Add new board</p>
+    </div>
+  <% end %>
 </div>
