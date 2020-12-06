@@ -8,11 +8,11 @@ class BoardsController < ApplicationController
   end
 
   def new
-    @board = Board.new
+    @board = current_user.boards.build
   end
 
   def create
-    @board = Board.new(board_params)
+    @board = current_user.boards.build(board_params)
     if @board.save
       redirect_to board_path(@board), notice: '保存できたよ'
     else
@@ -20,11 +20,11 @@ class BoardsController < ApplicationController
     end
   end
     def edit
-      @board = Board.find(params[:id])
+      @board = current_user.boards.find(params[:id])
     end
 
     def update
-      @board = Board.find(params[:id])
+      @board = current_user.boards.find(params[:id])
       if @board.update(board_params)
         redirect_to board_path(@board)
       else
@@ -33,7 +33,7 @@ class BoardsController < ApplicationController
     end
 
     def destroy
-      board = Board.find(params[:id])
+      board = current_user.boards.find(params[:id])
       board.destroy!
       redirect_to root_path
     end
