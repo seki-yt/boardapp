@@ -10,10 +10,12 @@
       </div>
         <div class="content">
           <p class = "card-content"><%= board.content %></p>
+          <% if user_signed_in? && current_user.id == board.user_id %>
             <div class="content-drop drop-btn">
               <%= link_to 'Edit', edit_board_path(id: board.id), class: 'edit-text' %>
               <%= link_to 'Delete', board_path(board), data: { method: 'delete', confirm: '本当に削除しますか？' }, class: 'delete-text' %>
             </div>
+          <% end %>
         </div>
       <%= image_tag 'Oval (1).png', :class => 'card-avatar' %>
     </div>
