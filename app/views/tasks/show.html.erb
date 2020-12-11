@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="task-title">
+    <h2 class="task-title-left"><%= @task.title %></h2>
+    <div class="task-title-right">
+      <%= link_to 'Edit', edit_board_task_path(@board, @task), class: 'task-text' %>
+      <%= link_to 'Delete', board_task_path(@board, @task), data: { method: 'delete', confirm: '本当に削除しますか？' }, class: 'task-text' %>
+    </div>
+  </div>
+  <% if @task.eyecatch.attached? %>
+    <div class="task-image">
+      <%= image_tag @task.eyecatch, class: 'image' %>
+    </div>
+  <% end %>
+  <div class="task-content">
+    <div class="task-content-text"><%= @task.content %></div>
+  </div>
+</div>

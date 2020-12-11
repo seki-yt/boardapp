@@ -1,0 +1,41 @@
+.task-title {
+  margin: 32px 0;
+  display: flex;
+
+  &-left {
+    font-size: 26px;
+  }
+
+  &-right {
+    display: block;
+    margin: 32px 25px 30px auto; 
+    font-size: 12px;
+  }
+}
+
+.task-text {
+  margin-left: 8px;
+}
+
+.image {
+  width: 360px;
+  height: 170px;
+  border-radius: 8px;
+  margin-bottom: 35px; 
+}
+
+.task-content {
+  background-color: #F4F4F4;
+  border-radius: 8px;
+  width: 360px;
+  height: auto;
+  margin-bottom: 35px;
+
+  &-text {
+    padding: 20px 15px;
+    font-size: 14px;
+  }
+}
+
+
+

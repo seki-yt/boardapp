@@ -2,12 +2,15 @@
   <h2>Brackets</h2>
   <% @tasks.each do |task| %> 
     <div class="card">
+      <% if task.eyecatch.attached? %>
         <div class = "card-image-around">
           <%= image_tag task.eyecatch, :class => 'card-image' %>
         </div>
+      <% end %>
       <div class="card-title">
-          <p class = 'card-title-left'><%= task.title %></p>
-        <%= image_tag 'Combined Shape.png', :class => 'card-title-right dropbtn' %>
+          <%= link_to board_task_path(@board.id, id: task[:id]), class: 'task-show' do %>
+            <h2 class = 'task-show-title'><%= task.title %></h2>
+          <% end %>
       </div>
         <div class="content">
           <p class = "card-content"><%= task.content %></p>
