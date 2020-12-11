@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="card-title">
+    <h2>New Card</h2>
+  </div>
+  <%= form_with(model: @task, url: board_task_path(@task.board), method: 'put', local: true) do |f| %>
+    <div class = 'text-around'>
+      <%= f.label :eyecatch, 'アイキャッチ' %>
+    </div>
+    <div class = 'text-around'>
+      <%= f.file_field :eyecatch %>
+    </div>
+    <div  class = 'text-around' >
+      <%= f.label :title, 'Name', class: 'text-title'%>
+    </div>
+    <div>
+      <%= f.text_field :title , class: 'text'%>
+    </div>
+    <div class = 'text-around' >
+      <%= f.label :content, 'Description', class: 'text-title'%>
+    </div>
+    <div>
+      <%= f.text_area :content, class: 'text-content'%>
+    </div>
+
+    <%= f.submit 'Submit', class: 'btn-primary' %>
+
+<% end %>
+</div>
