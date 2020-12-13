@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   root to: "boards#index"
 
   resources :boards do
-    resources :tasks
+    resources :tasks do 
+    end
+  end
+
+  resources :tasks do
+    resources :comments, only:[:new, :create]
   end
 end

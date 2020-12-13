@@ -14,4 +14,18 @@
   <div class="task-content">
     <div class="task-content-text"><%= @task.content %></div>
   </div>
+
+  <div class="comment">
+    <p class = "comment-title">Comment</p>
+    <% @comments.each do |comment| %>
+      <div class = comment-content>
+        <p><%= comment.content %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class = "comment">
+    <%= link_to new_task_comment_path(@board, @task) do %>
+    <p class="add-comment">Add new comment</p>
+    <% end %>
 </div>
