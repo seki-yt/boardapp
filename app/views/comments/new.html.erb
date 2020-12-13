@@ -1,0 +1,14 @@
+<div class="container">
+  <div class = "card-title">
+    <h2>New Comment</h2>
+  </div>
+  <%= form_with(model: @comment, url: task_comments_path(@task), local: true) do |f| %>
+    <div class = 'text-around' >
+      <div>
+        <%= f.text_area :content, class: 'text-content'%>
+      </div>
+    </div>
+
+    <%= f.submit 'Submit', class: 'btn-primary' %>
+  <% end %>
+</div>
